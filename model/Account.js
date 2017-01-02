@@ -1,5 +1,7 @@
 
 import type { AccountState } from './AccountState'
+import type { Channel } from './Channel'
+import type { Playlist } from './Playlist'
 
 /**
  * The Account represents a YouTube account of the user of this extension. This
@@ -8,41 +10,41 @@ import type { AccountState } from './AccountState'
  */
 interface Account {
   /**
-   * Google account ID, provided by the Chrome OAuth2 API.
+   * Google account ID, as provided by the Chrome OAuth2 API.
    */
-  id: string
+  id: string;
 
   /**
-   * ID of the YouTube channel associated with the account.
+   * The YouTube channel associated with the account.
    */
-  channelId: string
+  channel: Channel;
 
   /**
    * The name of the Google account (currently the e-mail address).
    */
-  title: string
+  title: string;
 
   /**
    * The state of the account, must be one of the {@linkcode AccountState.*}
    * constants.
    */
-  state: AccountState
+  state: AccountState;
 
   /**
    * The last error reported by the YouTube API related to this account. Set
    * to {@code null} if the account works properly.
    */
-  lastError: ?string
+  lastError: ?string;
 
   /**
-   * ID the of playlist that contains the watch history of the account.
+   * The of playlist that contains the watch history of the account.
    */
-  watchHistoryPlaylistId: string
+  watchHistoryPlaylist: Playlist;
 
   /**
-   * ID of the "watch later" playlist for this account.
+   * The "watch later" playlist for this account.
    */
-  watchLaterPlaylistId: string
+  watchLaterPlaylist: Playlist;
 }
 
 export type Account = Account

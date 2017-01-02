@@ -1,27 +1,29 @@
 
+import type { Channel } from './Channel'
+
 /**
  * Model representing a YouTube video.
  */
 interface Video {
   /**
-   * Video ID.
+   * Video ID, as provided by the YouTube Data API.
    */
-  id: string
+  id: string;
 
   /**
    * Video title.
    */
-  title: string
+  title: string;
 
   /**
    * Video description.
    */
-  description: string
+  description: string;
 
   /**
    * The moment at which the video has been uploaded and published.
    */
-  publishedAt: Date
+  publishedAt: Date;
 
   /**
    * Thumbnails of the video. The keys are quality description strings.
@@ -35,49 +37,32 @@ interface Video {
    * - {@code standard} - 640 &times; 480
    * - {@code maxres} - 1280 &times; 720
    */
-  thumbnails: {[label: string]: {url: string, width: number, height: number}}
+  thumbnails: {[label: string]: {url: string, width: number, height: number}};
 
   /**
    * Duration of the video in seconds.
    */
-  duration: number
+  duration: number;
 
   /**
    * Number of views of the video.
    */
-  viewCount: number
+  viewCount: number;
 
   /**
-   * ID of the YouTube channel on which the video was uploaded.
+   * The YouTube channel to which the video has been uploaded.
    */
-  channelId: string
+  channel: Channel;
 
   /**
-   * Google account IDs of the accounts from which the video is available.
+   * Set to {@code true} if this video has already been watched, marked as
+   * watched or watched by the "watch history" playlist of any account; set to
+   * {@code false} otherwise.
    */
-  accountIds: Array<string>
+  watched: boolean
 
   /**
-   * IDs of incognito subscriptions from which the video is available.
-   */
-  incognitoSubscriptionIds: Array<number>
-
-  /**
-   * Set to {@code 1} if this video has already been watched, marked as watched
-   * or watched by the "watch history" playlist of any account; set to
-   * {@code 0} otherwise.
-   */
-  watched: number
-
-  /**
-   * Set to {@code 1} if at least one YouTube account subscription or incognito
-   * subscription from which this video originated is currently enabled,
-   * otherwise set to {@code 0}.
-   */
-  isEnabled: number
-
-  /**
-   * The moment the video's view count has been updated last time.
+   * The moment the video's view count has been updated the last time.
    */
   lastUpdate: Date
 }

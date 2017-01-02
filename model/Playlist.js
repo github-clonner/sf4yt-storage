@@ -4,25 +4,25 @@
  */
 interface Playlist {
   /**
-   * The ID of the playlist.
+   * The ID of the playlist, as provided by the YouTube Data API.
    */
-  id: string
+  id: string;
 
   /**
    * The playlist name.
    */
-  title: string
+  title: string;
 
   /**
    * The playlist description.
    */
-  description: string
+  description: string;
 
   /**
    * Total number of videos in this playlist. This number is provided by the
    * YouTube API.
    */
-  videoCount: number
+  videoCount: number;
 
   /**
    * The thumbnails of the playlist. The keys are quality description strings.
@@ -38,18 +38,7 @@ interface Playlist {
    *
    * The thumbnails may change with every video added to the playlist.
    */
-  thumbnails: {[label: string]: {url: string, width: number, height: number}}
-
-  /**
-   * The Google account IDs of the accounts that are subscribed to this
-   * playlist.
-   */
-  accountIds: Array<string>
-
-  /**
-   * IDs of the incognito subscriptions to this playlist.
-   */
-  incognitoSubscriptionIds: Array<number>
+  thumbnails: {[label: string]: {url: string, width: number, height: number}};
 }
 
 export type Playlist = Playlist
