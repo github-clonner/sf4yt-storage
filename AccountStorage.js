@@ -2,6 +2,8 @@
 import type { Account } from './model/Account'
 
 export interface AccountStorage {
+  getAccounts(): Promise<Account>;
+
   addAccount(account: Account): Promise<Account>;
 
   enableAccount(account: Account): Promise<Account>;

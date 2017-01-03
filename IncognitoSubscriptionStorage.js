@@ -2,6 +2,8 @@
 import type { Subscription } from './model/Subscription'
 
 export interface IncognitoSubscriptionStorage {
+  getIncognitoSubscriptions(): Promise<Subscription>;
+
   addIncognitoSubscription(subscription: Subscription): Promise<Subscription>;
 
   enableIncognitoSubscription(subscription: Subscription): Promise<Subscription>;
