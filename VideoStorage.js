@@ -45,7 +45,8 @@ export interface VideoStorage {
    *
    * @param video The video to mark as watched.
    * @return A promise that resolves to the updated video entity re-retrieved
-   *         from the storage.
+   *         from the storage. The promise resolves once the changes has been
+   *         persisted.
    */
   markAsWatched(video: Video): Promise<Video>;
 }
