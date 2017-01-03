@@ -8,7 +8,7 @@ import type { Playlist } from './Playlist'
  * model is NOT used to represent the YouTube channels the user is subscribed
  * to.
  */
-interface Account {
+export interface Account {
   /**
    * Google account ID, as provided by the Chrome OAuth2 API.
    */
@@ -46,5 +46,3 @@ interface Account {
    */
   watchLaterPlaylist: Playlist;
 }
-
-export type Account = Account

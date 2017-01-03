@@ -4,7 +4,7 @@ import type { Channel } from './Channel'
 /**
  * Model representing a YouTube video.
  */
-interface Video {
+export interface Video {
   /**
    * Video ID, as provided by the YouTube Data API.
    */
@@ -66,5 +66,3 @@ interface Video {
    */
   lastUpdate: Date
 }
-
-export type Video = Video

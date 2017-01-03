@@ -2,7 +2,7 @@
 /**
  * The model for storing information about playlists.
  */
-interface Playlist {
+export interface Playlist {
   /**
    * The ID of the playlist, as provided by the YouTube Data API.
    */
@@ -40,5 +40,3 @@ interface Playlist {
    */
   thumbnails: {[label: string]: {url: string, width: number, height: number}};
 }
-
-export type Playlist = Playlist

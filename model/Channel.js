@@ -5,7 +5,7 @@ import type { Playlist } from './Playlist'
  * Model for storing information about a YouTube channel the user is subscribed
  * to.
  */
-interface Channel {
+export interface Channel {
   /**
    * The ID of the YouTube channel, as provided by the YouTube Data API.
    */
@@ -33,5 +33,3 @@ interface Channel {
    */
   uploadsPlaylist: Playlist;
 }
-
-export type Channel = Channel
