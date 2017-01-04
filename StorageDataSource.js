@@ -8,6 +8,8 @@ import type { Video } from './model/Video'
  * Provides data from the YouTube Data API.
  */
 export interface StorageDataSource {
+  resolveAccount(accountId: string): Promise<Account>;
+
   fetchSubscriptions(account: Account): Promise<Subscription>;
 
   fetchPlaylistUpdates(playlists: Array<Playlist>): Promise<Array<Playlist>>;
