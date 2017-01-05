@@ -1,9 +1,31 @@
 
 import type { Subscription } from './model/Subscription'
 
+/**
+ * This interface describes the methods that should be implemented by a class
+ * providing the access to the incognito subscriptions in the storage for the
+ * purpose of managing the user's incognito subscriptions.
+ */
 export interface IncognitoSubscriptionStorage {
-  getIncognitoSubscriptions(): Promise<Subscription>;
+  /**
+   * Retrieves all incognito subscriptions that are currently stored in the
+   * storage.
+   *
+   * @return A promise that resolves to the incognito subscriptions in the
+   *         storage.
+   */
+  getIncognitoSubscriptions(): Promise<Array<Subscription>>;
 
+  /**
+   * Adds the provided incognito subscription into the storage.
+   *
+   * The method does not have to synchronize the videos available through that
+   * subscription immediately, depending on the implementation.
+   *
+   * @param subscription The subscription to persist in the storage.
+   * @return A promise that resolves when the subscription has been persisted.
+   *         The promise will resolve to the persisted subscription.
+   */
   addIncognitoSubscription(subscription: Subscription): Promise<Subscription>;
 
   /**
