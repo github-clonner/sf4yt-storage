@@ -41,9 +41,10 @@ export interface AccountStorage {
   enableAccount(account: Account): Promise<Account>;
 
   /**
-   * Disables the specified account. This will make all videos that are not
+   * Disables the specified account. This will make all videos, that are not
    * included in any other subscribed channel or playlist that are subscribed
-   * by another enabled account or incognito subscription.
+   * by another enabled account or incognito subscription, hidden from the
+   * video feed.
    *
    * The method has no effect if the account is already disabled.
    *
