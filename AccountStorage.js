@@ -10,20 +10,21 @@ export interface AccountStorage {
   /**
    * Retrieves all accounts currently stored in the storage.
    *
-   * @return A promise that resolves to the accounts in the storage.
+   * @return A promise that resolves to all accounts in the storage.
    */
   getAccounts(): Promise<Array<Account>>;
 
   /**
    * Adds the provided account to the storage.
    *
-   * The method may resolve the returned promise without synchronizing the
-   * account's subscriptions and subscription videos, depending on the
-   * implementation.
+   * The method does not have to synchronize the account's subscriptions,
+   * playlists and subscription videos immediately with the account, depending
+   * on the implementation.
    *
-   * @param account The account to store into the storage.
-   * @return A promise that resolves to the stored account entity. The promise
-   *         resolves when the account has been persisted.
+   * @param account The account to add to the storage.
+   * @return A promise that resolves when the account has been persisted. The
+   *         promise resolves to the persisted account.
+   * @throws {Error} Thrown if the account is already present in the storage.
    */
   addAccount(account: Account): Promise<Account>;
 
@@ -35,7 +36,7 @@ export interface AccountStorage {
    *
    * @param account The account to enable.
    * @return A promise that resolves when the account has been enabled. The
-   *         promise resolves when the change has been persisted.
+   *         promise resolves to the updated account.
    */
   enableAccount(account: Account): Promise<Account>;
 
@@ -48,7 +49,7 @@ export interface AccountStorage {
    *
    * @param account The account to disable.
    * @return A promise that resolves when the account has been disabled. The
-   *         promise resolves when the change has been persisted.
+   *         promise resolves to the updated account.
    */
   disableAccount(account: Account): Promise<Account>;
 
