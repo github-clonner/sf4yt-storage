@@ -38,7 +38,9 @@ export interface IncognitoSubscriptionStorage {
    * @return A promise that resolves when the subscription has been enabled.
    *         The promise resolves to the updated subscription.
    */
-  enableIncognitoSubscription(subscription: Subscription): Promise<Subscription>;
+  enableIncognitoSubscription(
+    subscription: Subscription
+  ): Promise<Subscription>;
 
   /**
    * Disables the specified incognito subscription. This will make all videos,
