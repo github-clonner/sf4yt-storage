@@ -1,3 +1,4 @@
+// @flow
 
 /**
  * The model for storing information about playlists.

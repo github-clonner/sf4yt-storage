@@ -1,3 +1,4 @@
+// @flow
 
 import type { Channel } from './Channel'
 
@@ -59,10 +60,10 @@ export interface Video {
    * watched or watched by the "watch history" playlist of any account; set to
    * {@code false} otherwise.
    */
-  watched: boolean
+  watched: boolean;
 
   /**
    * The moment the video's view count has been updated the last time.
    */
-  lastUpdate: Date
+  lastUpdate: Date;
 }

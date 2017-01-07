@@ -1,3 +1,4 @@
+// @flow
 
 import type { Account } from './model/Account'
 import type { Playlist } from './model/Playlist'

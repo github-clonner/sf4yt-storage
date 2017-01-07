@@ -1,3 +1,4 @@
+// @flow
 
 import type { Account } from './Account'
 import type { Channel } from './Channel'

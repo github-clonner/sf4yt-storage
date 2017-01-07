@@ -1,3 +1,4 @@
+// @flow
 
 import type { Subscription } from './model/Subscription'
 

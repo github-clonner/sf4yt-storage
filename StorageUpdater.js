@@ -1,3 +1,4 @@
+// @flow
 
 /**
  * This interface describes the methods that should be implemented by a class

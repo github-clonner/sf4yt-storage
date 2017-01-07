@@ -28,5 +28,8 @@
     "transform": [
       "babelify"
     ]
+  },
+  "devDependencies": {
+    "flow-bin": "^0.37.4"
   }
 }

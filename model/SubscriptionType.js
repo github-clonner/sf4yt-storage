@@ -1,3 +1,4 @@
+// @flow
 
 /**
  * Types of subscriptions.

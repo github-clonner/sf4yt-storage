@@ -1,3 +1,4 @@
+// @flow
 
 /**
  * Enum containing the possible states of a user's YouTube account.

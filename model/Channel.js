@@ -1,3 +1,4 @@
+// @flow
 
 import type { Playlist } from './Playlist'
 

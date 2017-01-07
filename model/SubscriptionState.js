@@ -1,3 +1,4 @@
+// @flow
 
 /**
  * Possible states of a subscription to a YouTube channel or playlist.
