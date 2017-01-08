@@ -33,7 +33,7 @@ export interface Account {
 
   /**
    * The last error reported by the YouTube API related to this account. Set
-   * to {@code null} if the account works properly.
+   * to {@code undefined} if the account works properly.
    */
   lastError: ?string;
 

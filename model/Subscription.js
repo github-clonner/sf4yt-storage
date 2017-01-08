@@ -41,14 +41,14 @@ export interface Subscription {
   state: SubscriptionState;
 
   /**
-   * The last reported error related to this subscription, set to {@code null}
-   * if there is no current error.
+   * The last reported error related to this subscription, set to
+   * {@code undefined} if there is no current error.
    */
   lastError: ?string;
 
   /**
    * The Google account from which this subscription has been provided. The
-   * field is {@code null} if this is an incognito subscription.
+   * field is {@code undefined} if this is an incognito subscription.
    */
   account: ?Account;
 
