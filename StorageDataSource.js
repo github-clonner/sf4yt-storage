@@ -11,8 +11,16 @@ import type { Video } from './model/Video'
  */
 export interface StorageDataSource {
   /**
+   * Fetches the details and related information of the user's Google account
+   * the user has currently selected in Chrome/Chromium.
+   *
+   * @return A promise that will resolve to the account details.
+   */
+  resolveCurrentAccount(): Promise<Account>;
+
+  /**
    * Fetches the details and related information of the specified account. This
-   * required the user to choose the account of the specified ID as the primary
+   * requires the user to choose the account of the specified ID as the primary
    * account so that the request to the YouTube Data API can be properly
    * authorized.
    *
@@ -31,6 +39,30 @@ export interface StorageDataSource {
    *         subscribed by the specified account.
    */
   fetchSubscriptions(account: Account): Promise<Array<Subscription>>;
+
+  /**
+   * Fetches all the information related to the specified channel necessary for
+   * creating an incognito subscription to the channel.
+   *
+   * @param channelId The ID of the channel for which an incognito subscription
+   *        should be created.
+   * @return A promise that will resolve to an incognito subscription to the
+   *         specified channel.
+   */
+  resolveIncognitoChannelSubscription(channelId: string): Promise<Subscription>;
+
+  /**
+   * Fetches all the information related to the specified playlist necessary
+   * for creating an incognito subscription to the playlist.
+   *
+   * @param playlistId The ID of the playlist for which an incognito
+   *        subscription should be created.
+   * @return A promise that will resolve to an incognito subscription to the
+   *         specified playlist.
+   */
+  resolveIncognitoPlaylistSubscription(
+    playlistId: string
+  ): Promise<Subscription>;
 
   /**
    * Fetches the updates of the provided playlists. The method checks whether
