@@ -1,5 +1,7 @@
 // @flow
 
+import type { Account } from './model/Account'
+
 /**
  * This interface describes the methods that should be implemented by a class
  * the manages updating the data stored in the storage using the data fetched
@@ -50,4 +52,18 @@ export interface StorageUpdater {
    *         video views in the storage.
    */
   updateVideoViews(ttl: number): Promise<void>;
+
+  /**
+   * Sets the {@code watched} flag of videos in the "watch history" playlist of
+   * the specified user's account.
+   *
+   * This operation requires the user to authorize this extension to read their
+   * private data.
+   *
+   * @param account The user's google account from which the "watch history"
+   *        playlist should be read.
+   * @return A promise that resolves when the method has finished updating the
+   *         {@code watched} flags of the videos the user has watched.
+   */
+  syncWatchedVideos(account: Account): Promise<void>;
 }

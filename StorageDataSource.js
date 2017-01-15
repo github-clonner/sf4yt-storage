@@ -91,11 +91,14 @@ export interface StorageDataSource {
    *        The predicate will receive the last fetched batch of videos (that
    *        is excluding the previously fetched batches) and should return
    *        {@code true} if the following batch should be fetched as well.
+   * @param [requiresAuthorization=false] Flag signalling whether the request
+   *        to read the playlist's contents requires the user's authorization.
    * @return A promise that will resolve to all of the fetched videos.
    */
   fetchVideos(
     playlist: Playlist,
-    shouldContinue: (videos: Array<Video>) => boolean
+    shouldContinue: (videos: Array<Video>) => boolean,
+    requiresAuthorization?: boolean
   ): Promise<Array<Video>>;
 
   /**
