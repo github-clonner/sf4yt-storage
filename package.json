@@ -1,6 +1,6 @@
 {
   "name": "sf4yt-storage",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The storage and model interfaces for the Subscription Feed For YouTube extension for Google Chrome.",
   "private": true,
   "main": "index.js",
