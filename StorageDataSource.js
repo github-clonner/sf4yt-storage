@@ -98,7 +98,7 @@ export interface StorageDataSource {
   fetchVideos(
     playlist: Playlist,
     shouldContinue: (videos: Array<Video>) => boolean,
-    requiresAuthorization?: boolean
+    requiresAuthorization: ?boolean
   ): Promise<Array<Video>>;
 
   /**
